@@ -2,10 +2,12 @@ const Todo = require("../models/punkshop")
 
 
 const createPunk = (req, res) => {
-    const { name } = req.body
-    console.log(name)
+    const { orderNum } = req.body
+    const { custID } = req.body
+    const { items } = req.body
+    console.log(orderNum, custID, items)
     const punkObject = new Punk((
-        name
+        orderNum,custUDm,items
     ))
 }
 
@@ -21,6 +23,7 @@ const getPunk = async (req, res) => {
 
 module.exports = {
 
-    getPunk
+    getPunk,
+    createPunk
    
 }
