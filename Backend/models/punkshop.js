@@ -5,20 +5,23 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 // what the data will look like
 const punkSchema = new Schema({
-    item: {
-        type: Int32Array,
+    orderNum: {
+        type: Number,
         required: true
     },
-    name: {
-        type: String,
+    custID: {
+        type: Number,
         required: true
     },
-    price: {
-        type:Int32Array,
+    items: [{
+        item: String,     
+        type: Number,
+        quantity: Number,
+        price: Number,
         required: true
-    }
+        
+    }] 
     
-
 })
 
-module.exports = mongoose.model('punk', punkSchema)
+module.exports = mongoose.model('Punk', punkSchema)
