@@ -15,7 +15,7 @@ const createPunk = async (req, res) => {
     res.status(200).json(newPunk)
 }
 
-const getPunk = async (req, res) => {
+const getPunks = async (req, res) => {
     // find all items from a mongoose Model method 
     const items = await Punk.find({})
     // respond with and object that has a message and the items from the DB
@@ -24,7 +24,14 @@ const getPunk = async (req, res) => {
         punk: items
     })
 }
-
+const getPunk = async (req, res) => {
+    // get id from ':id' param from the route (the :id in the route path)
+    const { id } = req.params
+    // find todo with Model.findById()
+    const punk = await Punk.findById(id)
+    // response (res) with .json with the todo found
+    res.status(200).json(punk)
+}
 const editPunk = async (req, res) => {
     // get id from ':id' param from the route
     const { id } = req.params
@@ -32,11 +39,11 @@ const editPunk = async (req, res) => {
     const punk = await Punk.findByIdAndUpdate(id, ({
     orderNum: req.body.orderNum,
     custID: req.body.custID,    
-    items: req.body.items [{
+    items: req.body.items /* [{
         item: req.body.item,     
         quantity: req.body.quantity,
         price: req.body.price,
-        }]    
+        }]     */
     
 }))
     res.status(200).json(punk)
@@ -55,6 +62,7 @@ const deletePunk = async (req, res) => {
 
 module.exports = {
 
+    getPunks,
     getPunk,
     createPunk,
     editPunk,
