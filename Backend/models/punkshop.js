@@ -14,14 +14,17 @@ const punkSchema = new Schema({
         required: true
     },
     items: [{
-        item: String,     
-        type: Number,
-        quantity: Number,
-        price: Number,
-        required: true
+        item: {type: Number, required: true},    
+        productID: {type: Number, required: true},
+        productName: {type: String, required: true},
+        quantity: {type: Number, required: true},
+        price: {type: Number, required: true},
         
-    }] 
-    
-})
+        
+            }]   
+          
+         
+    }
+)
 
 module.exports = mongoose.model('Punk', punkSchema)
