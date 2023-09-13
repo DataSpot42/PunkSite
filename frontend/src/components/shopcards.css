@@ -1,0 +1,50 @@
+.contianer{
+ display: flex;
+ justify-content: center;
+ align-content: center;
+}
+.cards-grid-wrap {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  max-width: 80%;
+   
+    
+    }
+     .card_img{
+        max-height: 200px;
+        display: flex;
+        margin-bottom: 15px;
+       
+       
+    }
+    .card_inner{
+        display: flex;
+        justify-content: center;
+    }
+    .beerName{
+        font-weight: 800;
+    }
+    .card_item{
+       
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.19);
+border-radius: 6px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(6.1px);
+-webkit-backdrop-filter: blur(6.1px);
+border: 1px solid rgba(255, 255, 255, 0.47);
+        
+    }
+    body{
+        background-color: rgba(6, 218, 242);
+    }
+   
+    .seeMore{
+        margin-top: 10px;
+    
+     
+        
+    }
