@@ -8,6 +8,6 @@ const itemsController = require('../controllers/items')
 router.get('/items', itemsController.getPunk)
 router.get('/item/:id', itemsController.getPunk)
 router.post('/item', itemsController.createPunk)
-router.patch('/items/:id', itemsController.editPunk)
-router.delete('/items/:id', itemsController.deletePunk)
-module.export = router
+router.patch('/item/:id', itemsController.editPunk)
+router.delete('/item/:id', itemsController.deletePunk)
+module.exports = router
