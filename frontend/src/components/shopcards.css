@@ -48,3 +48,12 @@ border: 1px solid rgba(255, 255, 255, 0.47);
      
         
     }
+
+.popupclass {
+    background-color: beige;
+    border: solid 2px royalblue;
+    border-radius: 25px;
+    max-width: 300px;
+    height: 200 px;
+    padding: 10px
+}    
