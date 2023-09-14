@@ -4,7 +4,9 @@ import ReactDOM from 'react-dom/client';
 import { faker } from '@faker-js/faker';
 import { useEffect, useState } from 'react';
 import { BasketAdd } from './basket';
-import Popup from './popup';
+/* import Popup from './popup'; */
+import Popup from 'reactjs-popup';
+import { motion } from "framer-motion";   // animation module
 
 
 
@@ -95,7 +97,13 @@ setItem(pricedData)
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
                   </div>
                   <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
-                  <button onClick={() => handlerPopup(info)}> More Info</button>
+                  {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
+                  
+                  
+    <Popup  trigger={<button>Trigger</button>} position="right center">
+      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} {info.description} </motion.div>
+    </Popup>
+ 
                   {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
                 </div>
 
@@ -105,9 +113,12 @@ setItem(pricedData)
           })
         }
         <button onClick={() => handlerNextPage()}> Next Page</button>
-       {<Popup trigger={btnPopup} setTrigger={setBtnpopup}>
 
- </Popup> }
+        
+
+       {/* {<Popup trigger={btnPopup} setTrigger={setBtnpopup}>
+
+ </Popup> } */}
       </div>
 
     </div>
