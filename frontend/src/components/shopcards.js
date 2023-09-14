@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom/client';
 import { faker } from '@faker-js/faker';
 import { useEffect, useState } from 'react';
 
+
+
 const Beer = () => {
   const randomPrice = faker.commerce.price({ min: 10, max: 30, dec: 2, symbol: '£' })
   const [item, setItem] = useState([]);
@@ -71,7 +73,7 @@ setItem(pricedData)
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
                   </div>
                   <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
-
+                 
 
                 </div>
 
