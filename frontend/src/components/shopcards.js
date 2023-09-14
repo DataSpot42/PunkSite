@@ -4,10 +4,12 @@ import ReactDOM from 'react-dom/client';
 import { faker } from '@faker-js/faker';
 import { useEffect, useState } from 'react';
 import { BasketAdd } from './basket';
+import Popup from './popup';
 
 
 
 const Beer = () => {
+  const [btnPopup, setBtnpopup] = useState(false)
   const randomPrice = faker.commerce.price({ min: 10, max: 30, dec: 2, symbol: '£' })
   const [item, setItem] = useState([]);
   const [basket, setBasket] = useState([]);
@@ -38,6 +40,14 @@ const Beer = () => {
     setBasket(list)
  */
   }
+const handlerPopup = (product) =>{
+ setBtnpopup(true)
+ console.log(product)
+ Popup(product)
+ 
+ 
+}
+  
   console.log(start, end)
 
 
@@ -85,8 +95,8 @@ setItem(pricedData)
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
                   </div>
                   <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
-                 
-
+                  <button onClick={() => handlerPopup(info)}> More Info</button>
+                  {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
                 </div>
 
 
@@ -95,6 +105,9 @@ setItem(pricedData)
           })
         }
         <button onClick={() => handlerNextPage()}> Next Page</button>
+       {<Popup trigger={btnPopup} setTrigger={setBtnpopup}>
+
+ </Popup> }
       </div>
 
     </div>
