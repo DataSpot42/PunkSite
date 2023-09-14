@@ -4,8 +4,15 @@ import { useEffect, useState } from 'react';
 
 
 
-export const BasketAdd = (custNum, productName, productID,productPrice) => {
+export const BasketAdd = (basketItem) => {
     const [shoppingList,setShoppingList] = useState([])
+    console.log(basketItem)
+
+    setShoppingList(basketItem)
+
+    return shoppingList
+
+
 
 
 }

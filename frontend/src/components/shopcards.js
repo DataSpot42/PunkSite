@@ -3,13 +3,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { faker } from '@faker-js/faker';
 import { useEffect, useState } from 'react';
+import { BasketAdd } from './basket';
 
 const Beer = () => {
   const randomPrice = faker.commerce.price({ min: 10, max: 30, dec: 2, symbol: '£' })
   const [item, setItem] = useState([]);
+  const [basket, setBasket] = useState([]);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(10);
-
+  const orderNum = faker.number.int({ min: 1, max: 100 })
+  const custNum = 1
+  let itemNum = 1
+  let basketItem =[]
   const handlerNextPage = () => {
     setStart(start + 10)
     setEnd(end + 10)
@@ -20,9 +25,16 @@ const Beer = () => {
   }
   const handlerAddBasket = (product) => {
     let array = []
-
+    itemNum++
+    array = [product]
     console.log(product)
-
+    basketItem.push([product.id, product.name, product.price])
+    console.log(basketItem)
+    /* setBasket(basketItem)
+    console.log(basket) */
+    /* let list = BasketAdd(basketItem)
+    setBasket(list)
+ */
   }
   console.log(start, end)
 
