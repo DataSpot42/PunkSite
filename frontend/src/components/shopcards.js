@@ -31,15 +31,18 @@ const Beer = () => {
   const getBeer = async () => {
     const response = await fetch("https://api.punkapi.com/v2/beers?page=2&per_page=80");
     const data = await response.json();
-    setItem(data)
+    
     console.log(data)
-    
-   /*  data.forEach((price, index)=>{
-      data[index].push('randomPrice')
-    }) */
    
+   const pricedData = data.map((price) => {
+    return {
+        price: faker.commerce.price({ min: 10, max: 30, dec: 2, symbol: '£' }),
+        ...price
+    }
+});
+console.log(pricedData)
   
-    
+setItem(pricedData)
 
   }
 
@@ -63,7 +66,7 @@ const Beer = () => {
                 </div><div className="beerName">{info.name}
 
                   <div className="detail-box">
-                    <div className="gitDetail">{randomPrice}</div>
+                    <div className="gitDetail">{info.price}</div>
                     <div className="gitDetail">{info.volume.value} liters</div>
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
                   </div>
