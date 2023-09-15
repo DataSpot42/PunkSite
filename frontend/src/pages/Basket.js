@@ -5,34 +5,34 @@ import { deleteTodo } from "../api/deleteTodo";
 import './style.css'
 import { motion } from "framer-motion";
 
-const Home = () => {
-    const [todos, setTodos] = useState([]) 
+const Basket = () => {
+    const [punks, setPunks] = useState([]) 
     
-    const deleteHandler = async (todo) => {
-     deleteTodo(todo) 
+    const deleteHandler = async (punk) => {
+     deleteTodo(punk) 
      
-     setTodos(todos.filter(item => item !== todo))
+     setPunks(punk.filter(item => item !== punk))
 
      
-     console.log(todo)
+     console.log(punk)
     };
     
     useEffect(() => {
-        const fetchTodos = async () => {
-            let data = await readTodos()
-            setTodos(data.todos)
+        const fetchPunks = async () => {
+            let data = await readPunks()
+            setPunks(data.punks)
             console.log(data.message)
         }
-        fetchTodos()
+        fetchPunks()
     }, [])
 
 
-    if (!todos) return <h1>loading...</h1>
+    if (!punks) return <h1>loading...</h1>
     return (
         <div className="toDoItems">
             <>
                 {
-                    todos ? todos.map((todo) => <Card key={todo._id} deleteHandler={deleteHandler} todo={todo}/>)
+                    todos ? punks.map((punk) => <Card key={punk._id} deleteHandler={deleteHandler} punk={punk}/>)
                         : <p>loading...</p>
                 }
             </>
@@ -41,4 +41,4 @@ const Home = () => {
 
 }
 
-export default Home
+export default Basket

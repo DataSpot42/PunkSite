@@ -19,7 +19,7 @@ const AddTodo = () => {
             <h1>
                 add item
             </h1>
-            {updated? <h2>Todo added: {userInput} </h2> : <h2></h2>}
+            {updated? <h2>Item added: {userInput} </h2> : <h2></h2>}
             <form onSubmit={handler}>
                 <input 
                 type="text"
