@@ -17,6 +17,7 @@ const punkSchema = new Schema({
         item: {type: Number, required: true},    
         productID: {type: Number, required: true},
         productName: {type: String, required: true},
+        productImage: {type: String, required: true},
         quantity: {type: Number, required: true},
         price: {type: Number, required: true},
         
