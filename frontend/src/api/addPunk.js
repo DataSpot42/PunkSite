@@ -9,6 +9,7 @@ export const addPunk = async (punk) => {
             item: punk.product,    
             productID: punk.productID,
             productName: punk.productName,
+            productImage: punk.productImage,
             quantity: punk.quantity,
             price: punk.price
     }]}
