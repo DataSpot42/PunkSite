@@ -9,8 +9,8 @@ const punkSchema = new Schema({
         type: Number,
         required: true
     },
-    custID: {
-        type: Number,
+    custName: {
+        type: String,
         required: true
     },
     items: [{

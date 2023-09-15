@@ -9,13 +9,13 @@ const Navbar = () => {
                 <div className='navBar'>
                     
                     <Link className='navBarItems'  to='/'>
-                        my list
+                        Basket
                     
                     </Link>
                     
                     
-                    <Link className='navBarItems' to='/add-todo'>
-                        add item
+                    <Link className='navBarItems' to='/Shop'>
+                        Shop
                     </Link>
                     
                     

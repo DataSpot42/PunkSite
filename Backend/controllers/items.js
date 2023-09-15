@@ -38,7 +38,7 @@ const editPunk = async (req, res) => {
     // use mongoose model method findByIdAndUpdate
     const punk = await Punk.findByIdAndUpdate(id, ({
     orderNum: req.body.orderNum,
-    custID: req.body.custID,    
+    custID: req.body.custName,    
     items: req.body.items /* [{
         item: req.body.item,     
         quantity: req.body.quantity,
