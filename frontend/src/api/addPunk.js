@@ -4,7 +4,7 @@ export const addPunk = async (punk) => {
     // pass paramter to function
     // create new object with 'text' key (depending on your Model)
     let obj = { orderNum: punk.orderNum,
-        custID: punk.custID,
+        custName: punk.custName,
         items: [{
             item: punk.product,    
             productID: punk.productID,

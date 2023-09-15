@@ -5,7 +5,7 @@ const itemsController = require('../controllers/items')
 // routes to controllers
 // the '/items' route will run the getTodos controller
 // which will fetch the data from your database
-router.get('/items', itemsController.getPunk)
+router.get('/items', itemsController.getPunks)
 router.get('/item/:id', itemsController.getPunk)
 router.post('/item', itemsController.createPunk)
 router.patch('/item/:id', itemsController.editPunk)

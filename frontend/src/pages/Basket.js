@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { readTodos } from "../api/readTodos";
+import { readTodos } from "../api/readPunks";
 import Card from '../components/Card'
 import { deleteTodo } from "../api/deleteTodo";
 import './style.css'
@@ -32,7 +32,7 @@ const Basket = () => {
         <div className="toDoItems">
             <>
                 {
-                    todos ? punks.map((punk) => <Card key={punk._id} deleteHandler={deleteHandler} punk={punk}/>)
+                    punks ? punks.map((punk) => <Card key={punk._id} deleteHandler={deleteHandler} punk={punk}/>)
                         : <p>loading...</p>
                 }
             </>
