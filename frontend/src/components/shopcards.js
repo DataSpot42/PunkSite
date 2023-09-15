@@ -129,7 +129,9 @@ setItem(pricedData)
 
 export default Beer
 
-
+/* useEffect(() => {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}, [todos]); */
 
 
 
