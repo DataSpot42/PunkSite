@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../pages/style.css'
+import './shopcards.css'
 import { motion } from "framer-motion";
 
 const Navbar = () => {

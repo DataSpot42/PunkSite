@@ -3,11 +3,11 @@ const Punk = require("../models/punkshop")
 
 const createPunk = async (req, res) => {
     const { orderNum } = req.body
-    const { custID } = req.body
+    const { custName } = req.body
     const { items } = req.body
-    console.log(orderNum, custID, items)
+    console.log(orderNum, custName, items)
     const punkObj = new Punk({
-        orderNum,custID,items
+        orderNum,custName,items
 })
 // await for it to be saved
     const newPunk = await punkObj.save()
@@ -38,7 +38,7 @@ const editPunk = async (req, res) => {
     // use mongoose model method findByIdAndUpdate
     const punk = await Punk.findByIdAndUpdate(id, ({
     orderNum: req.body.orderNum,
-    custID: req.body.custName,    
+    custName: req.body.custName,    
     items: req.body.items /* [{
         item: req.body.item,     
         quantity: req.body.quantity,
