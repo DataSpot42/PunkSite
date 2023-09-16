@@ -4,7 +4,7 @@ export const addPunk = async (punk) => {
     console.log(punk.items[0])
     // pass paramter to function
     // create new object with 'text' key (depending on your Model)
-    let obj = { orderNumber: punk.orderNum,
+    let obj = { orderNum: punk.orderNum,
         custName: punk.custName,
         items: [{
             item: punk.items[0].item,    
@@ -15,7 +15,7 @@ export const addPunk = async (punk) => {
             price: punk.items[0].price
     }]}
     console.log(obj)
-    const response = await fetch(`${API_URL}/punk/item`,{
+    const response = await fetch(`${API_URL}/punks/item`,{
         // method type?
         method: 'POST',
         // sending body, stringify data
