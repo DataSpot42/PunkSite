@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { faker } from '@faker-js/faker';
 import { useEffect, useState } from 'react';
-import { BasketAdd } from './basket';
+import { Basket } from '../pages/Basket';
 /* import Popup from './popup'; */
 import Popup from 'reactjs-popup';
 import { motion } from "framer-motion";   // animation module
@@ -110,6 +110,7 @@ setItem(pricedData)
 
               </div>
             )
+
           })
         }
         <button onClick={() => handlerNextPage()}> Next Page</button>

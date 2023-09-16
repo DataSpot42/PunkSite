@@ -1,18 +1,20 @@
 const API_URL = `http://localhost:4000`
 
 export const addPunk = async (punk) => {
+    console.log(punk.items[0])
     // pass paramter to function
     // create new object with 'text' key (depending on your Model)
-    let obj = { orderNum: punk.orderNum,
+    let obj = { orderNumber: punk.orderNum,
         custName: punk.custName,
         items: [{
-            item: punk.product,    
-            productID: punk.productID,
-            productName: punk.productName,
-            productImage: punk.productImage,
-            quantity: punk.quantity,
-            price: punk.price
+            item: punk.items[0].item,    
+            productID: punk.items[0].productID,
+            productName: punk.items[0].productName,
+            productImage: punk.items[0].productImage,
+            quantity: punk.items[0].quantity,
+            price: punk.items[0].price
     }]}
+    console.log(obj)
     const response = await fetch(`${API_URL}/punk/item`,{
         // method type?
         method: 'POST',

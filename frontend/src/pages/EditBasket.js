@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
-import { getTodo } from "../api/getTodo"
-import { editTodo } from "../api/editTodo"
+import { getPunk } from "../api/getPunk"
+import { editPunk } from "../api/editPunk"
 
 
-const EditTodo = (punk) => { 
+const EditPunk = (punk) => { 
 
 
     const { id } = useParams()
@@ -15,9 +15,9 @@ const EditTodo = (punk) => {
     const submitHandler = async (punk) => {       
         let obj = {
             _id: toUpdate._id,
-            items: updateBasket        
+            items: userInput
         }
-       let response = await edit(obj)         
+       let response = await editPunk(obj)         
         console.log(response)
         /* setUpdated(true)  */       
         
@@ -25,12 +25,12 @@ const EditTodo = (punk) => {
     }
 
     useEffect(() => {
-        const fetchTodo = async () => {
+        const fetchPunk = async () => {
             let data = await getPunk(id)
             setToUpdate(data)
             console.log(data)
         }
-        fetchTodo()
+        fetchPunk()
     },[])
     return (
         <div>
@@ -46,4 +46,4 @@ const EditTodo = (punk) => {
         </div>
     )
 }
-export default EditTodo
+export default EditPunk

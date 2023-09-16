@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { readTodos } from "../api/readPunks";
+import { readPunks} from "../api/readPunks";
 import Card from '../components/Card'
-import { deleteTodo } from "../api/deleteTodo";
-import './style.css'
+import { deletePunk } from "../api/deletePunk";
+import '../components/shopcards.css'
 import { motion } from "framer-motion";
 
 const Basket = () => {
     const [punks, setPunks] = useState([]) 
     
     const deleteHandler = async (punk) => {
-     deleteTodo(punk) 
+     deletePunk(punk) 
      
      setPunks(punk.filter(item => item !== punk))
 

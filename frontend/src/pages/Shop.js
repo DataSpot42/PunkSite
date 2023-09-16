@@ -1,4 +1,4 @@
-import './shopcards.css';
+import '../components/shopcards.css';
 import { addPunk } from "../api/addPunk"
 import React from 'react';
 import ReactDOM from 'react-dom/client';
