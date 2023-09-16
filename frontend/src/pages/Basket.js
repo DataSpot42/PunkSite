@@ -11,7 +11,7 @@ const Basket = () => {
     const deleteHandler = async (punk) => {
      deletePunk(punk) 
      
-     setPunks(punk.filter(item => item !== punk))
+     /* setPunks(punk.filter(item => item !== punk)) */
 
      
      console.log(punk)
@@ -20,8 +20,9 @@ const Basket = () => {
     useEffect(() => {
         const fetchPunks = async () => {
             let data = await readPunks()
-            setPunks(data.punks)
+            setPunks(data.punk)
             console.log(data.message)
+            console.log(data)
         }
         fetchPunks()
     }, [])

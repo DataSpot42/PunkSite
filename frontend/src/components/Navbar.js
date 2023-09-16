@@ -9,7 +9,7 @@ const Navbar = () => {
                 <div className='navBar'>
                     
                     <Link className='navBarItems'  to='/'>
-                        Basket
+                        Login
                     
                     </Link>
                     
@@ -17,7 +17,9 @@ const Navbar = () => {
                     <Link className='navBarItems' to='/Shop'>
                         Shop
                     </Link>
-                    
+                    <Link className='navBarItems' to='/Basket'>
+                        Basket
+                    </Link>
                     
 
                 </div>
