@@ -51,7 +51,7 @@ const Basket = () => {
             <button className="btnLinks" onClick={()=>handlerBackToShop()}>Back to Shop</button>
             <>
                 {
-                    punks ? punks.map((punk) => <Card key={punk.id} deleteHandler={{deleteHandler}} punk={punk}/>)
+                    punks ? punks.map((punk) => <Card key={punk.id} deleteHandler={deleteHandler} punk={punk}/>)
                         : <p>loading...</p>
                 }
             </>
