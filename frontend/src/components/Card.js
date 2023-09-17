@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom"
 
-const Card = ({ punks, deleteHandler}) => {
-console.log(punks)
+const Card = ({ punk, deleteHandler}) => {
+console.log(punk)
     return (
         <div className='eachToDo'>
-            <h3>{punks.productName}</h3>
-            <h3>£{punks.price}</h3>
-            <h3>{punks.productImage}</h3>
+            <h3>{punk.productName}</h3>
+            <h3>£{punk.price}</h3>            
+            <img className='card_img' src={punk.productImage} alt="" />
 
             <p className="buttonSpace">
-            <button className="btnLinks" onClick={()=>deleteHandler(punks)}>delete</button>
+            <button className="btnLinks" onClick={()=>deleteHandler(punk)}>delete</button>
             
             
             {/* <Link className="btnLinks"
