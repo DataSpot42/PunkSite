@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom"
 /* import Popup from './popup'; */
 import Popup from 'reactjs-popup';
 import { motion } from "framer-motion";   // animation module
+import ad from '../images/adbanner.jpg';
+
 
 
 
@@ -124,9 +126,13 @@ setItem(pricedData)
 
 
   return (
+    <div>
+    <img className='adbanner' src={ad} alt="Logo"></img>
     <div className='contianer'>
+     
+    
       <div className="cards-grid-wrap">
-
+    
         {
           item.slice(start, end).map((info, index) => {
             return (
@@ -134,13 +140,20 @@ setItem(pricedData)
               <div className="card_item" key={info.id}>
                 <div className="card_inner">
                   <img className='card_img' src={info.image_url} alt="" />
-                </div><div className="beerName">{info.name}
+                </div>
 
-                  <div className="detail-box">
-                    <div className="gitDetail">£{info.price}</div>
-                    <div className="gitDetail">{info.volume.value} liters</div>
+                  
+                    <div className='txtcard'> 
+                    <div className="gitDetail textcard avb">avb - {info.abv}</div>
+                    <div className="gitDetail textcard vol">{info.volume.value} liters</div>
+                    </div>
+                    <div className="detail-box">
+                    
+                    <div className="beerName">{info.name}</div>
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
+                    <div className="gitDetail">£{info.price}</div>
                   </div>
+
                   <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
                   {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
                   
@@ -150,7 +163,7 @@ setItem(pricedData)
     </Popup>
  
                   {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
-                </div>
+                
 
 
               </div>
@@ -167,6 +180,7 @@ setItem(pricedData)
  </Popup> } */}
       </div>
 
+    </div>
     </div>
   );
 
