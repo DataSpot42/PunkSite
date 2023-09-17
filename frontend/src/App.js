@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="main">
       <BrowserRouter>
-        <h1>PunkShop</h1>
+      
         <div className="toDoList">
         <Navbar />
         <Routes>

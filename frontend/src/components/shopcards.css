@@ -2,58 +2,115 @@
  display: flex;
  justify-content: center;
  align-content: center;
+ 
+ margin-top: 30px;
 }
 .cards-grid-wrap {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
   max-width: 80%;
-   
-    
     }
      .card_img{
-        max-height: 200px;
+        max-height: 150px;
         display: flex;
         margin-bottom: 15px;
-       
-       
     }
+   
     .card_inner{
         display: flex;
         justify-content: center;
     }
     .beerName{
         font-weight: 800;
+        color: #3e4c45;
+        font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Rubik', sans-serif;
+       
     }
     .card_item{
        
         padding: 10px;
-        background: rgba(255, 255, 255, 0.19);
+        background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 border-radius: 6px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-backdrop-filter: blur(6.1px);
--webkit-backdrop-filter: blur(6.1px);
-border: 1px solid rgba(255, 255, 255, 0.47);
+
+
+
+
         
     }
+    .txtcard{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-size: 12px;
+        
+        
+    }
+    .navBarContainer{
+        background-color:white ;
+        width: 100%;
+        margin-top: -10px;
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+       
+    
+    }
+    .navBarContainer img {
+        max-height: 100px;
+        padding: 10px;
+    }
+.navBar{
+   
+    padding: 2px;
+    text-align: center;
+}
+    .textcard{
+        width: 50%;
+        float: left;
+        padding: 1px;
+        justify-content: space-between;
+        color: aliceblue;
+        
+      
+    }
+    .vol{
+        text-align: right;
+    }
+    .detail-box{
+        display: flex;
+        flex-direction:column;
+       
+    
+    }
+
+    .card_item:hover{
+        border-radius: 8px;
+        box-shadow: 3px 1px 10px rgba(0, 158, 206, 0.2);
+        backdrop-filter: blur(6.1px);
+       -webkit-backdrop-filter: blur(6.1px);
+    }
     body{
-        background-color: rgba(6, 218, 242);
+        background-color: white;
     }
    
     .seeMore{
-        margin-top: 10px;
-    
-     
+        margin-top: 10px
         
     }
+    .adbanner{
+        width: 100%;
+        margin-bottom: 50px;
+        max-height: 200px;
+        margin: 0px;
+        display: block;
+    }
+   
 
-.popupclass {
-    background-color: beige;
-    border: solid 2px royalblue;
-    border-radius: 25px;
-    max-width: 300px;
-    height: 200 px;
-    padding: 10px
-}    
