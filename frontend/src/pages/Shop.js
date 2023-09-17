@@ -29,6 +29,7 @@ const Beer = () => {
   const custNum = 1
   let itemNum = 1
   let basketItem =[]
+  console.log('Welcome to the Shop')
   const handlerNextPage = () => {
     setStart(start + 10)
     setEnd(end + 10)
@@ -38,37 +39,41 @@ const Beer = () => {
     }
   }
   const handlerAddBasket = async (product) => {
+    let obj2 = await getPunk(id)  // get curent order 
     let array = []
     itemNum++
     let amount=1
-    array = [product]
+    array = [product]  
     console.log(product)
-    let obj2 = null
-    let ourBasket = await getPunk(id)
-    console.log(ourBasket)
-    let ourBasketItems = ourBasket.items
-    console.log(ourBasket.items)
-    if (ourBasketItems.length>1) {obj2 = ourBasketItems} else {obj2 = ourBasketItems[0]}
+    let obj = { /* _id:id,  */ /* orderNum: ourBasket.orderNum,
+    custName: ourBasket.custName, */
+    items: [{
+        item: 1,    
+        productID: product.id,
+        productName: product.name,
+        productImage: product.image_url,
+        quantity: amount,
+        price: product.price
+}]}  // format chosen product in the right form to go into the basket
+    /* let obj2 = null */
+    console.log("New Item")
+    console.log(obj)    
+    console.log("Existing Order")
+    console.log(obj2)
+    /* if (currentBasketItems.length>0) {obj2 = currentBasketItems} else {obj2 = []} */
+    // if there are items in the baseket store them in obj2 
+    
+    
     /* let ourBasketObject = Object.fromEntries(ourBasketItems) */
     /* ourBasketItems.push[{product.id, product.name, product.image_url, product.price}] */
-    console.log(ourBasketItems)
-    
-    console.log(obj2)
+    /* console.log(currentBasketItems)    
+    console.log(obj2) */
     /* let nextItem = ourBasket.items */
-    let obj = { /* _id:id,  */ /* orderNum: ourBasket.orderNum,
-      custName: ourBasket.custName, */
-      items: [{
-          item: 1,    
-          productID: product.id,
-          productName: product.name,
-          productImage: product.image_url,
-          quantity: amount,
-          price: product.price
-  }]}
-  console.log(obj)
-  obj.items.push(obj2)
-  console.log(obj)
-  let response = await editPunk(obj,id)         
+
+  /* console.log(obj) */
+  obj2.items.push(obj.items[0])  //add current items to new item
+  console.log(obj2)
+  let response = await editPunk(obj2,id)         
   console.log(response)
     /* let basketSize = ourBasket[0].length */
 
@@ -140,7 +145,7 @@ setItem(pricedData)
                   {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
                   
                   
-    <Popup  trigger={<button>Trigger</button>} position="right center">
+    <Popup  trigger={<button>More Info</button>} position="right center">
       <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} {info.description} </motion.div>
     </Popup>
  
