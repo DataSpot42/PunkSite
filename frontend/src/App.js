@@ -18,11 +18,11 @@ const App = () => {
             element={<Login />}
           />
           <Route
-            path='/basket'
+            path='/basket/:id'
             element={<Basket />}
           />
           <Route
-            path='/shop'
+            path='/shop/:id'
             element={<Shop />}
           />
           <Route

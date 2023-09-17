@@ -4,7 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { faker } from '@faker-js/faker';
 import { useEffect, useState } from 'react';
-
+import { useParams } from 'react-router-dom';
+import { getPunk } from "../api/getPunk"
+import { editPunk } from "../api/editPunk"
+import { useNavigate } from "react-router-dom"
 /* import Popup from './popup'; */
 import Popup from 'reactjs-popup';
 import { motion } from "framer-motion";   // animation module
@@ -12,9 +15,13 @@ import { motion } from "framer-motion";   // animation module
 
 
 const Beer = () => {
+  const { id } = useParams()
+  const [toUpdate, setToUpdate] = useState('')
+  console.log(id)
   const [btnPopup, setBtnpopup] = useState(false)
-  
+  const navigate = useNavigate()
   const [item, setItem] = useState([]);
+  const [orderItem, setOrderItem] = useState(0);
   const [basket, setBasket] = useState([]);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(10);
@@ -30,18 +37,56 @@ const Beer = () => {
       setEnd(10)
     }
   }
-  const handlerAddBasket = (product) => {
+  const handlerAddBasket = async (product) => {
     let array = []
     itemNum++
+    let amount=1
     array = [product]
     console.log(product)
-    basketItem.push([product.id, product.name, product.image_url, product.price])
-    console.log(basketItem)
+    let obj2 = null
+    let ourBasket = await getPunk(id)
+    console.log(ourBasket)
+    let ourBasketItems = ourBasket.items
+    console.log(ourBasket.items)
+    if (ourBasketItems.length>1) {obj2 = ourBasketItems} else {obj2 = ourBasketItems[0]}
+    /* let ourBasketObject = Object.fromEntries(ourBasketItems) */
+    /* ourBasketItems.push[{product.id, product.name, product.image_url, product.price}] */
+    console.log(ourBasketItems)
+    
+    console.log(obj2)
+    /* let nextItem = ourBasket.items */
+    let obj = { /* _id:id,  */ /* orderNum: ourBasket.orderNum,
+      custName: ourBasket.custName, */
+      items: [{
+          item: 1,    
+          productID: product.id,
+          productName: product.name,
+          productImage: product.image_url,
+          quantity: amount,
+          price: product.price
+  }]}
+  console.log(obj)
+  obj.items.push(obj2)
+  console.log(obj)
+  let response = await editPunk(obj,id)         
+  console.log(response)
+    /* let basketSize = ourBasket[0].length */
+
+    
+    /* let obj = {
+      _id: toUpdate._id,
+      item 
+    } */
+    
     /* setBasket(basketItem)
     console.log(basket) */
     /* let list = BasketAdd(basketItem)
     setBasket(list)
  */
+  }
+  const handlerGotoBasket = (e) => {
+    
+    navigate (`/Basket/${id}`) 
   }
 
   
@@ -57,7 +102,7 @@ const Beer = () => {
    
    const pricedData = data.map((price) => {
     return {
-        price: faker.commerce.price({ min: 10, max: 30, dec: 2, symbol: '£' }),
+        price: parseFloat(faker.commerce.price({ min: 10, max: 30, dec: 2})),
         ...price
     }
 });
@@ -87,7 +132,7 @@ setItem(pricedData)
                 </div><div className="beerName">{info.name}
 
                   <div className="detail-box">
-                    <div className="gitDetail">{info.price}</div>
+                    <div className="gitDetail">£{info.price}</div>
                     <div className="gitDetail">{info.volume.value} liters</div>
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
                   </div>
@@ -108,6 +153,7 @@ setItem(pricedData)
           })
         }
         <button onClick={() => handlerNextPage()}> Next Page</button>
+        <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
 
         
 
