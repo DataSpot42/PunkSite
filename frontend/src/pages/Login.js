@@ -26,19 +26,25 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="log">
+            <div className="login-container">
             <h1>
-                To Start Shopping Please provide your name, then press submit to start shopping
+            DRINK MORE BEER TO CELEBRATE. REPEAT FOREVER.
             </h1>
-           
+            <h2>WELCOME TO PLANET BREWDOG</h2>
+           <div className="input-btn">
             <form onSubmit={handler}>
-                <input 
+                <input className="input-login"
                 type="text"
+                placeholder="Whats Your Name?"
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
                 />
-                <button className="btnLinks" type="submit">submit</button>
+                <button className="btnLinks" type="submit">Login</button>
+               
             </form>
+            </div>
+            </div>
         </div>
     )
 }
