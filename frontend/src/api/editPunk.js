@@ -1,17 +1,19 @@
 const API_URL = `http://localhost:4000`
 
-export const editPunk = async (punk) => {
-    
-    let obj = { orderNum: punk.orderNum,
-        custID: punk.custID,
+export const editPunk = async (punk,id) => {
+    console.log(punk)
+    let obj = { /* orderNum: punk.orderNum,
+        custName: punk.custName, */
         items: [{
-            item: punk.product,    
-            productID: punk.productID,
-            productName: punk.productName,
-            quantity: punk.quantity,
-            price: punk.price
+            item: punk.items.item,    
+            productID: punk.items.productID,
+            productName: punk.items.productName,
+            productImage: punk.items.productImage,
+            quantity: punk.items.quantity,
+            price: punk.items.price
         }]}
-    const response = await fetch(`${API_URL}/punk/items/${punk._id}`, {       
+        console.log(punk)
+    const response = await fetch(`${API_URL}/punks/item/${id}`, {       
     
         // method type?
         method: 'PATCH',
@@ -19,12 +21,13 @@ export const editPunk = async (punk) => {
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: JSON.stringify(obj)
+        body: JSON.stringify(punk)
         // content type?
         
         
     })
     const json = await response.json()
+    console.log(json)
     return json
      
 }

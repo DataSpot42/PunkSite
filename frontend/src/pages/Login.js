@@ -1,36 +1,35 @@
 import { useState } from "react"
 import { addPunk } from "../api/addPunk"
+import { useNavigate } from "react-router-dom"
 import '../components/shopcards.css'
 
 const Login = () => {
     const [userInput, setUserInput] = useState("")
     const [updated, setUpdated] = useState(false)
-
+    const navigate = useNavigate()
     const handler = async (e) => {
         e.preventDefault()
         let loginName = {}
         let loginArray = {
             orderNum: 
-                1234
+                12345
             ,
             custName:                 userInput
-            ,
-            items: [{
-                item: 0,    
-                productID: 0,
-                productName: "Beer",
-                productImage: "urlhere",
-                quantity: 0,
-                price: 0.00,
+            
+           
                 
                 
-    }] } 
+     } 
         
         console.log(loginArray)
         // what function will run?
         let response = await addPunk(loginArray)
         setUpdated(true)
         console.log(response)
+        console.log(response)
+        navigate (`/Shop/${response._id}`) 
+    
+
     }
 
     return (

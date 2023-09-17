@@ -14,10 +14,10 @@ const Navbar = () => {
                     </Link>
                     
                     
-                    <Link className='navBarItems' to='/Shop'>
+                    <Link className='navBarItems' to='/shop'>
                         Shop
                     </Link>
-                    <Link className='navBarItems' to='/Basket'>
+                    <Link className='navBarItems' to='/basket'>
                         Basket
                     </Link>
                     
