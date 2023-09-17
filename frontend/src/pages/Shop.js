@@ -153,15 +153,15 @@ setItem(pricedData)
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
                     <div className="gitDetail">£{info.price}</div>
                   </div>
-
+<div className='.bottom-btn'>
                   <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
                   {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
                   
                   
     <Popup  trigger={<button>More Info</button>} position="right center">
-      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} {info.description} </motion.div>
+      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} <br></br> <br></br> {info.description} </motion.div>
     </Popup>
- 
+ </div>
                   {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
                 
 
