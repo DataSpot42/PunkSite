@@ -144,7 +144,7 @@ setItem(pricedData)
 
                   
                     <div className='txtcard'> 
-                    <div className="gitDetail textcard avb">avb - {info.abv}</div>
+                    <div className="gitDetail textcard avb">avb - {info.abv}%</div>
                     <div className="gitDetail textcard vol">{info.volume.value} liters</div>
                     </div>
                     <div className="detail-box">
