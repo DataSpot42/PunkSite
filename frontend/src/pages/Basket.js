@@ -3,6 +3,8 @@ import { readPunks} from "../api/readPunks";
 import { getPunk } from "../api/getPunk"
 import Card from '../components/Card'
 import { deletePunk } from "../api/deletePunk";
+import { addQPunk } from "../api/addQPunk";
+import { subQPunk } from "../api/subQPunk";
 import '../components/shopcards.css'
 import { motion } from "framer-motion";
 import { useParams } from 'react-router-dom';
@@ -31,6 +33,24 @@ const Basket = () => {
         
         console.log(punk)
        };
+    
+       const addQPunkHandler = async (punk) => {
+        addQPunk(punk) 
+        
+         
+        
+        console.log(punk)
+       
+       };   
+
+       const subQPunkHandler = async (punk) => {
+        subQPunk(punk) 
+        
+         
+        
+        console.log(punk)
+       
+       };   
 
 
     useEffect(() => {
@@ -51,7 +71,7 @@ const Basket = () => {
             <button className="btnLinks" onClick={()=>handlerBackToShop()}>Back to Shop</button>
             <>
                 {
-                    punks ? punks.map((punk) => <Card key={punk.id} deleteHandler={deleteHandler} punk={punk}/>)
+                    punks ? punks.map((punk) => <Card key={punk.id} deleteHandler={deleteHandler} addQPunkHandler={addQPunkHandler} subQPunkHandler={subQPunkHandler}  punk={punk}/>)
                         : <p>loading...</p>
                 }
             </>
