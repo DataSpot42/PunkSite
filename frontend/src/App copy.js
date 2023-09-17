@@ -1,5 +1,5 @@
 
-import Popup from './components/popup';
+
 import { useState } from 'react';
 
 
