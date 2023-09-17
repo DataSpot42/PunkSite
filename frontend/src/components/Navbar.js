@@ -14,12 +14,12 @@ const Navbar = () => {
                     </Link>
                     
                     
-                    <Link className='navBarItems' to='/shop'>
+                   {/*  <Link className='navBarItems' to='/shop'>
                         Shop
                     </Link>
                     <Link className='navBarItems' to='/basket'>
                         Basket
-                    </Link>
+                    </Link> */}
                     
 
                 </div>

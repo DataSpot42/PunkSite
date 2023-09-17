@@ -10,4 +10,5 @@ router.get('/item/:id', itemsController.getPunk)
 router.post('/item', itemsController.createPunk)
 router.patch('/item/:id', itemsController.editPunk)
 router.delete('/item/:id', itemsController.deletePunk)
+router.delete('/items/', itemsController.deletePunks)
 module.exports = router

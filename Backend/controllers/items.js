@@ -55,6 +55,12 @@ const deletePunk = async (req, res) => {
     const punk = await Punk.findByIdAndDelete(id)
     res.status(200).json(punk)
 }
+const deletePunks = async (req, res) => {
+    // find all items from a mongoose Model method 
+    const punk = await Punk.deleteMany()
+    // respond with and object that has a message and the items from the DB
+    res.status(200).json(punk)
+}
 
 
    
@@ -66,6 +72,7 @@ module.exports = {
     getPunk,
     createPunk,
     editPunk,
-    deletePunk
+    deletePunk,
+    deletePunks
    
 }
