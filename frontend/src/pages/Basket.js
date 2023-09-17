@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, React } from "react";
 import { readPunks} from "../api/readPunks";
 import { getPunk } from "../api/getPunk"
 import Card from '../components/Card'
@@ -11,13 +11,11 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"
 
 
-
-
 const Basket = () => {
-    const [punks, setPunks] = useState()
-    const { id } = useParams()
-    console.log(`i'm here`)
-    console.log(id)
+    console.log(`Welcome to the Basket`)
+    const [punks, setPunks] = useState()    
+    const { id } = useParams()    
+    
     const navigate = useNavigate() 
     
     const handlerBackToShop = () => {
@@ -26,28 +24,33 @@ const Basket = () => {
     }
     
     const deleteHandler = async (punk) => {
-        deletePunk(punk) 
-        
-        setPunks(punks.filter(item => item !== punk))
-   
-        
-        console.log(punk)
+        console.log(punk,id)
+        deletePunk(punk,id) 
+        let updatedPunks = await getPunk(id)
+        updatedPunks = await getPunk(id)
+        console.log (updatedPunks)
+        setPunks(updatedPunks.items) 
        };
     
        const addQPunkHandler = async (punk) => {
-        addQPunk(punk) 
         
-         
-        
-        console.log(punk)
-       
+        addQPunk(punk,id) 
+        let updatedPunks = await getPunk(id)
+        updatedPunks = await getPunk(id)        
+        setPunks(updatedPunks.items)    
        };   
 
        const subQPunkHandler = async (punk) => {
-        subQPunk(punk) 
+        subQPunk(punk,id) 
+        let updatedPunks = await getPunk(id)
+        updatedPunks = await getPunk(id)
+        console.log (updatedPunks)
+        setPunks(updatedPunks.items) 
+        console.log(punk)
         
-         
+        if (punk.quantity === 1) { console.log(`Zero!`); deleteHandler(punk,id) }    
         
+    
         console.log(punk)
        
        };   
@@ -56,25 +59,36 @@ const Basket = () => {
     useEffect(() => {
         const fetchPunks = async () => {
             let data = await getPunk(id)
-            setPunks(data.items)
-            console.log(data.message)
-            console.log(data)
+            setPunks(data.items)            
         }
         fetchPunks()
     }, [])
 
     console.log(punks)
+    let total = 0
+    
     
     if (!punks) return <h1>loading...</h1>
+    for (let k=0; k<punks.length; k++) {
+        total = total + (punks[k].price * punks[k].quantity)
+    }
+    console.log(total)
+
     return (
         <div className="toDoItems">
             <button className="btnLinks" onClick={()=>handlerBackToShop()}>Back to Shop</button>
             <>
                 {
-                    punks ? punks.map((punk) => <Card key={punk.id} deleteHandler={deleteHandler} addQPunkHandler={addQPunkHandler} subQPunkHandler={subQPunkHandler}  punk={punk}/>)
+                    punks ? 
+
+                    
+                    
+                    punks.map((punk,index) => <Card key={punk.id} deleteHandler={deleteHandler} addQPunkHandler={addQPunkHandler} subQPunkHandler={subQPunkHandler}  punk={punk}/>)
                         : <p>loading...</p>
                 }
             </>
+            
+            <h1> Total £{total}</h1>
         </div>
     );
 
@@ -82,4 +96,3 @@ const Basket = () => {
 
 export default Basket
 
-/* deleteHandler={deleteHandler} */

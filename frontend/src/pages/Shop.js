@@ -17,7 +17,7 @@ import { motion } from "framer-motion";   // animation module
 const Beer = () => {
   const { id } = useParams()
   const [toUpdate, setToUpdate] = useState('')
-  console.log(id)
+  
   const [btnPopup, setBtnpopup] = useState(false)
   const navigate = useNavigate()
   const [item, setItem] = useState([]);
@@ -44,7 +44,7 @@ const Beer = () => {
     itemNum++
     let amount=1
     array = [product]  
-    console.log(product)
+    
     let obj = { /* _id:id,  */ /* orderNum: ourBasket.orderNum,
     custName: ourBasket.custName, */
     items: [{
@@ -55,39 +55,12 @@ const Beer = () => {
         quantity: amount,
         price: product.price
 }]}  // format chosen product in the right form to go into the basket
-    /* let obj2 = null */
-    console.log("New Item")
-    console.log(obj)    
-    console.log("Existing Order")
-    console.log(obj2)
-    /* if (currentBasketItems.length>0) {obj2 = currentBasketItems} else {obj2 = []} */
-    // if there are items in the baseket store them in obj2 
     
-    
-    /* let ourBasketObject = Object.fromEntries(ourBasketItems) */
-    /* ourBasketItems.push[{product.id, product.name, product.image_url, product.price}] */
-    /* console.log(currentBasketItems)    
-    console.log(obj2) */
-    /* let nextItem = ourBasket.items */
-
-  /* console.log(obj) */
   obj2.items.push(obj.items[0])  //add current items to new item
-  console.log(obj2)
+  
   let response = await editPunk(obj2,id)         
-  console.log(response)
-    /* let basketSize = ourBasket[0].length */
-
-    
-    /* let obj = {
-      _id: toUpdate._id,
-      item 
-    } */
-    
-    /* setBasket(basketItem)
-    console.log(basket) */
-    /* let list = BasketAdd(basketItem)
-    setBasket(list)
- */
+  
+   
   }
   const handlerGotoBasket = (e) => {
     
@@ -95,7 +68,7 @@ const Beer = () => {
   }
 
   
-  console.log(start, end)
+  
 
 
 
@@ -103,7 +76,7 @@ const Beer = () => {
     const response = await fetch("https://api.punkapi.com/v2/beers?page=2&per_page=80");
     const data = await response.json();
     
-    console.log(data)
+    
    
    const pricedData = data.map((price) => {
     return {
@@ -111,7 +84,7 @@ const Beer = () => {
         ...price
     }
 });
-console.log(pricedData)
+
   
 setItem(pricedData)
 
