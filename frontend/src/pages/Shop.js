@@ -46,7 +46,7 @@ const Beer = () => {
     itemNum++
     let amount=1
     array = [product]  
-    
+    let qtyFlag = 0
     let obj = { /* _id:id,  */ /* orderNum: ourBasket.orderNum,
     custName: ourBasket.custName, */
     items: [{
@@ -56,14 +56,20 @@ const Beer = () => {
         productImage: product.image_url,
         quantity: amount,
         price: product.price
-}]}  // format chosen product in the right form to go into the basket
-    
-  obj2.items.push(obj.items[0])  //add current items to new item
+}]}  
+console.log(obj)
+console.log(obj2)
+// format chosen product in the right form to go into the basket
+for (let k=0; k<obj2.items.length; k++) {  
+if (obj.items[0].productID === obj2.items[k].productID) {obj2.items[k].quantity++; qtyFlag++}}
+console.log(qtyFlag)
+if (qtyFlag===0){
+  obj2.items.push(obj.items[0])} //add current items to new item
   
   let response = await editPunk(obj2,id)         
   
    
-  }
+} 
   const handlerGotoBasket = (e) => {
     
     navigate (`/Basket/${id}`) 
