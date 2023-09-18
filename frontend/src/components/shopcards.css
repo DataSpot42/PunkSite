@@ -2,8 +2,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .popupclass{
     border: grey 2px solid;
@@ -196,53 +195,51 @@ body {
     align-items: center;
     height: 100%;
 }
-
 .addto{
  
-    cursor: pointer;
-    border: 0;
-    border-radius: 4px;
-    font-weight: 600;
-    margin-top: 20px;
-    width: 100%;
-    padding: 5px 0;
-    box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
-    transition: 0.4s;
-    color: rgb(0, 159, 206);
-    background-color: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(0, 159, 206, 1);
-    display: block;
-
-
+        cursor: pointer;
+        border: 0;
+        border-radius: 4px;
+        font-weight: 600;
+        margin-top: 20px;
+        width: 100%;
+        padding: 5px 0;
+        box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+        transition: 0.4s;
+        color: rgb(0, 159, 206);
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(0, 159, 206, 1);
+        display: block;
+    
+    
 }
 .moreinfo{
-cursor: pointer;
-border: 0;
-margin-top: 5px;
-text-decoration: underline;
-font-weight: 600;
-
-width: 100%;
-
-
-transition: 0.4s;
-color: rgb(0, 159, 206);
-text-underline-offset: 4px;
-display: block;
+    cursor: pointer;
+    border: 0;
+    margin-top: 5px;
+    text-decoration: underline;
+    font-weight: 600;
+   
+    width: 100%;
+    
+   
+    transition: 0.4s;
+    color: rgb(0, 159, 206);
+    text-underline-offset: 4px;
+    display: block;
 }
 .moreinfo:hover {
-color: rgb(0, 159, 206, 0.5);
+    color: rgb(0, 159, 206, 0.5);
 }
 .next-btn{
-display: flex;
-justify-content: center;
-
-align-items: center;
+    display: flex;
+    justify-content: center;
+  
+    align-items: center;
 }
 .next-btn > button{
-margin: 10px 5px;
+    margin: 10px 5px;
 }
-
 /* resposive design */
 @media screen and (max-width: 900px) {
     .cards-grid-wrap {

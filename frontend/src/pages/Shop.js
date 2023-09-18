@@ -82,6 +82,7 @@ const Beer = () => {
     getBeer();
   }, []);
 
+
   return (   
     <div>     
       <img className='adbanner' src={ad} alt="Logo"></img>
@@ -99,6 +100,33 @@ const Beer = () => {
                     <img className='card_img' src={info.image_url} alt="" />
                   </div>
                   <div className='txtcard'>
+
+
+
+  return (
+    <div>
+    <img className='adbanner' src={ad} alt="Logo"></img>
+    <div className='next-btn'>
+    <button onClick={() => handlerNextPage()}> Next Page</button>
+        <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
+        </div>
+    <div className='contianer'>
+     
+    
+      <div className="cards-grid-wrap">
+    
+        {
+          item.slice(start, end).map((info, index) => {
+            return (
+
+              <div className="card_item" key={info.id}>
+                <div className="card_inner">
+                  <img className='card_img' src={info.image_url} alt="" />
+                </div>
+
+                  
+                    <div className='txtcard'> 
+
                     <div className="gitDetail textcard avb">avb - {info.abv}%</div>
                     <div className="gitDetail textcard vol">{info.volume.value} liters</div>
                   </div>
@@ -107,6 +135,7 @@ const Beer = () => {
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
                     <div className="gitDetail">£{info.price}</div>
                   </div>
+<<<<<<< HEAD
 <div className='.bottom-btn'>
                   <button classNamee="next-btn" onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
                   {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
@@ -119,6 +148,35 @@ const Beer = () => {
                   {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
                 
 
+=======
+
+                  <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>                 
+
+                  <Popup trigger={<button>More Info</button>} position="right center">
+                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} {info.description} </motion.div>
+                  </Popup>                 
+
+<div className='.bottom-btn'>
+                  <button onClick={() => handlerAddBasket(info)} className="seeMore addto"> Add</button>
+                  {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
+                  
+                  
+    <Popup  trigger={<button className='moreinfo'>More Info</button>} position="right center">
+      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass moreinfo" >{info.name} <br></br> <br></br> {info.description} </motion.div>
+    </Popup>
+ </div>
+                  {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
+                
+
+
+              </div>
+            )
+          })
+        }
+        
+
+        
+>>>>>>> ae703cdbf0940c458a62a3e7b778ebdc00a6a0e6
 
               </div>
             )
