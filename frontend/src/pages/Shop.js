@@ -108,7 +108,7 @@ const Beer = () => {
                   {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
                   
                   
-    <Popup  trigger={<button>More Info</button>} position="right center">
+    <Popup  trigger={<button className='moreinfo'>More Info</button>} position="right center">
       <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} <br></br> <br></br> {info.description} </motion.div>
     </Popup>
  </div>
