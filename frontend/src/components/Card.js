@@ -10,9 +10,9 @@ const Card = ({ punk, deleteHandler, subQPunkHandler, addQPunkHandler}) => {
             <img className='card_img' src={punk.productImage} alt="" />
 
             <p className="buttonSpace">
-            <button className="btnLinks" onClick={()=>deleteHandler(punk)}>delete</button>
-            <button className="btnLinks" onClick={()=>addQPunkHandler(punk)}>Add</button>
-            <button className="btnLinks" onClick={()=>subQPunkHandler(punk)}>Subtract</button>
+            <button className="smbtnLinks" onClick={()=>deleteHandler(punk)}>delete</button>
+            <button className="smbtnLinks" onClick={()=>addQPunkHandler(punk)}>Add</button>
+            <button className="smbtnLinks" onClick={()=>subQPunkHandler(punk)}>Subtract</button>
            </p>
         </div>
     )

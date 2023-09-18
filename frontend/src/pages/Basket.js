@@ -57,8 +57,10 @@ const Basket = () => {
         total = total + (punks[k].price * punks[k].quantity)  // works out price
     }
     return (
+        <div>
+        <button className="smbtnLinks" onClick={() => handlerBackToShop()}>Back to Shop</button>
         <div className="cards-grid-wrap">
-            <button className="btnLinks" onClick={() => handlerBackToShop()}>Back to Shop</button>
+            
             <>
                 {
                     punks ?
@@ -67,6 +69,7 @@ const Basket = () => {
                 }
             </>
             <h1> Total £{total}</h1> 
+        </div>
         </div>
     );
 }
