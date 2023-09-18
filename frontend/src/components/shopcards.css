@@ -5,6 +5,13 @@
 
     margin-top: 30px;
 }
+.popupclass{
+    border: grey 2px solid;
+    background-color: white;
+    float: right;
+    max-width: 400px;
+    padding:5px;
+}
 
 .cards-grid-wrap {
     display: grid;
@@ -14,6 +21,7 @@
     grid-row-gap: 10px;
     max-width: 90%;
 }
+
 
 .card_img {
     max-height: 150px;
@@ -40,12 +48,11 @@
     padding: 10px;
     background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     border-radius: 6px;
-
-
-
-
-
+    min-height: 300px;
+    position: relative;
 }
+
+
 
 .txtcard {
     display: flex;
@@ -54,8 +61,6 @@
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 12px;
-
-
 }
 
 .navBarContainer {
@@ -204,13 +209,3 @@ body {
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .cards-grid-wrap {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
-        max-width: 95%;
-    }
-}
