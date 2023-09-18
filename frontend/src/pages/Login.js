@@ -1,22 +1,22 @@
 import { useState } from "react"
 import { addPunk } from "../api/addPunk"
 import { useNavigate } from "react-router-dom"
+import { faker } from '@faker-js/faker';
 import '../components/shopcards.css'
 
 const Login = () => {
     const [userInput, setUserInput] = useState("")
-    
+    const orderNumber =faker.number.int({ min: 1, max: 9999999999 })  // generates random order number
     const navigate = useNavigate()
     const handler = async (e) => {
         e.preventDefault()
         let loginName = {}
         let loginArray = {
-            orderNum: 12345,
+            orderNum: orderNumber,
             custName: userInput,
-            items: [{item: 0}]
+            items: [{item: 0}]          // initialises order with user name
                 
-     } 
-        
+     }         
         
         // what function will run?
         let response = await addPunk(loginArray)     
