@@ -128,6 +128,10 @@ setItem(pricedData)
   return (
     <div>
     <img className='adbanner' src={ad} alt="Logo"></img>
+    <div className='next-btn'>
+    <button onClick={() => handlerNextPage()}> Next Page</button>
+        <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
+        </div>
     <div className='contianer'>
      
     
@@ -154,12 +158,12 @@ setItem(pricedData)
                     <div className="gitDetail">£{info.price}</div>
                   </div>
 <div className='.bottom-btn'>
-                  <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
+                  <button onClick={() => handlerAddBasket(info)} className="seeMore addto"> Add</button>
                   {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
                   
                   
-    <Popup  trigger={<button>More Info</button>} position="right center">
-      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} <br></br> <br></br> {info.description} </motion.div>
+    <Popup  trigger={<button className='moreinfo'>More Info</button>} position="right center">
+      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass moreinfo" >{info.name} <br></br> <br></br> {info.description} </motion.div>
     </Popup>
  </div>
                   {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
@@ -170,8 +174,7 @@ setItem(pricedData)
             )
           })
         }
-        <button onClick={() => handlerNextPage()}> Next Page</button>
-        <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
+        
 
         
 
