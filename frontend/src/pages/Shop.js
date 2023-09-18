@@ -103,20 +103,34 @@ const Beer = () => {
                     <div className="gitDetail"> {info.ingredients.malt[0].name}</div>
                     <div className="gitDetail">£{info.price}</div>
                   </div>
-                  <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>                 
+<div className='.bottom-btn'>
+                  <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
+                  {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
+                  
+                  
+    <Popup  trigger={<button>More Info</button>} position="right center">
+      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} <br></br> <br></br> {info.description} </motion.div>
+    </Popup>
+ </div>
+                  {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
+                
 
-                  <Popup trigger={<button>More Info</button>} position="right center">
-                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} {info.description} </motion.div>
-                  </Popup>                 
 
-                </div>
-              )
-            })
-          }
-          <button onClick={() => handlerNextPage()}> Next Page</button>
-          <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>          
-        </div>
+              </div>
+            )
+          })
+        }
+        <button onClick={() => handlerNextPage()}> Next Page</button>
+        <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
+
+        
+
+       {/* {<Popup trigger={btnPopup} setTrigger={setBtnpopup}>
+
+ </Popup> } */}
       </div>
+
+    </div>
     </div>
   );
 }
