@@ -59,8 +59,8 @@ const Basket = () => {
     return (
         <div>
         <button className="smbtnLinks" onClick={() => handlerBackToShop()}>Back to Shop</button>
-        <div className="cards-grid-wrap">
-            
+        <div className="contianer">
+            <div className="cards-grid-wrap">
             <>
                 {
                     punks ?
@@ -69,6 +69,7 @@ const Basket = () => {
                 }
             </>
             <h1> Total £{total}</h1> 
+        </div>
         </div>
         </div>
     );
