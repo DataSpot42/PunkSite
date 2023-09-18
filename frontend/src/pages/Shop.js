@@ -13,9 +13,6 @@ import Popup from 'reactjs-popup';
 import { motion } from "framer-motion";   // animation module
 import ad from '../images/adbanner.jpg';
 
-
-
-
 const Beer = () => {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -82,33 +79,13 @@ const Beer = () => {
     getBeer();
   }, []);
 
-  return (   
-    <div>     
-      <img className='adbanner' src={ad} alt="Logo"></img>
-      <div className='contianer'>
-      <div className='next-btn'>
-        <button  onClick={() => handlerNextPage()}> Next Page</button>
-        <button  onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
-</div>
-        <div className="cards-grid-wrap">
-          {
-            item.slice(start, end).map((info, index) => {
-              return (
-                <div className="card_item" key={info.id}>
-                  <div className="card_inner">
-                    <img className='card_img' src={info.image_url} alt="" />
-                  </div>
-                  <div className='txtcard'>
-
-
-
-
+  
   return (
     <div>
     <img className='adbanner' src={ad} alt="Logo"></img>
     <div className='next-btn'>
-    <button onClick={() => handlerNextPage()}> Next Page</button>
-        <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
+    <button className='smbtnLinks' onClick={() => handlerNextPage()}> Next Page</button>
+        <button className='smbtnLinks' onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
         <div></div>
         </div>
     <div className='contianer'>
@@ -138,15 +115,15 @@ const Beer = () => {
                     <div className="gitDetail">£{info.price}</div>
                   </div>
 <div className='.bottom-btn'>
-                  <button classNamee="next-btn" onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
-                  {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
+                  <button classNamee="smbtnLinks" onClick={() => handlerAddBasket(info)} className="smbtnLinks"> Add</button>
                   
                   
-    <Popup  trigger={<button className='moreinfo'>More Info</button>} position="right center">
+                  
+    <Popup  trigger={<button className='smbtnLinks'>More Info</button>} position="right center">
       <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="popupclass" >{info.name} <br></br> <br></br> {info.description} </motion.div>
-    </Popup>
+    </Popup>   {/* Popup for more info */}
  </div>
-                  {/* {setBtnpopup && < Popup productinfo = {info} /> } */}
+                  
                 
 
 
@@ -157,9 +134,7 @@ const Beer = () => {
        
         
 
-       {/* {<Popup trigger={btnPopup} setTrigger={setBtnpopup}>
-
- </Popup> } */}
+       
       </div>
 
     </div>
