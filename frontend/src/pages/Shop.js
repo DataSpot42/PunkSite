@@ -86,6 +86,10 @@ const Beer = () => {
     <div>     
       <img className='adbanner' src={ad} alt="Logo"></img>
       <div className='contianer'>
+      <div className='next-btn'>
+        <button  onClick={() => handlerNextPage()}> Next Page</button>
+        <button  onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
+</div>
         <div className="cards-grid-wrap">
           {
             item.slice(start, end).map((info, index) => {
@@ -104,7 +108,7 @@ const Beer = () => {
                     <div className="gitDetail">£{info.price}</div>
                   </div>
 <div className='.bottom-btn'>
-                  <button onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
+                  <button classNamee="next-btn" onClick={() => handlerAddBasket(info)} className="seeMore"> Add</button>
                   {/* <button onClick={() => handlerPopup(info)}> More Info</button> */}
                   
                   
@@ -120,9 +124,7 @@ const Beer = () => {
             )
           })
         }
-        <button onClick={() => handlerNextPage()}> Next Page</button>
-        <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
-
+       
         
 
        {/* {<Popup trigger={btnPopup} setTrigger={setBtnpopup}>
