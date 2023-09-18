@@ -236,22 +236,11 @@ body {
 .next-btn > button{
     margin: 10px 5px;
 }
-/* resposive design */
-@media screen and (max-width: 900px) {
-    .cards-grid-wrap {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(10, 1fr);
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
-        max-width: 95%;
-    }
-}
-
 .smbtnLinks {
     cursor: pointer;
     border: 0;
     border-radius: 4px;
+    text-decoration: none;
     font-weight: 600;
     margin-top: 5px;
     margin-left: 5px;
@@ -271,6 +260,22 @@ body {
     box-shadow: 0 0 15px rgba(0, 159, 206, 0.6);
     background-color: rgba(0, 159, 206, 1);
 }
+
+
+
+/* resposive design */
+@media screen and (max-width: 900px) {
+    .cards-grid-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        max-width: 95%;
+    }
+}
+
+
 
 
 
