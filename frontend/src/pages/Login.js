@@ -17,10 +17,10 @@ const Login = () => {
                 
      } 
         
-        console.log(loginArray)
+        
         // what function will run?
         let response = await addPunk(loginArray)     
-        console.log(response)
+        
         navigate (`/Shop/${response._id}`)  
 
     }
