@@ -131,6 +131,7 @@ setItem(pricedData)
     <div className='next-btn'>
     <button onClick={() => handlerNextPage()}> Next Page</button>
         <button onClick={(e) => handlerGotoBasket(e.target.value)}> Basket</button>
+        <div></div>
         </div>
     <div className='contianer'>
      
