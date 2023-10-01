@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import './shopcards.css'
-import { motion } from "framer-motion";
+
 import logo from '../images/logo.jpg';
 
 const Navbar = () => {
