@@ -10,7 +10,7 @@ const Login = () => {
     const navigate = useNavigate()
     const handler = async (e) => {
         e.preventDefault()
-        let loginName = {}
+        
         let loginArray = {
             orderNum: orderNumber,
             custName: userInput,
