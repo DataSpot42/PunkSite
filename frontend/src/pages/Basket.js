@@ -1,12 +1,12 @@
 import { useEffect, useState, React } from "react";
-import { readPunks } from "../api/readPunks";
+
 import { getPunk } from "../api/getPunk"
 import Card from '../components/Card'
 import { deletePunk } from "../api/deletePunk";
 import { addQPunk } from "../api/addQPunk";
 import { subQPunk } from "../api/subQPunk";
 import '../components/shopcards.css'
-import { motion } from "framer-motion";
+
 import { useParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"
 
@@ -50,7 +50,7 @@ const Basket = () => {
             setPunks(data.items)
         }
         fetchPunks()
-    }, [])
+    })
     let total = 0
     if (!punks) return <h1>loading...</h1>
     for (let k = 0; k < punks.length; k++) {
